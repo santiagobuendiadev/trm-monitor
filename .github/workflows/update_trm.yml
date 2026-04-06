@@ -1,0 +1,37 @@
+name: Update TRM Data
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # Once a day at 8:00 PM COT (01:00 UTC)
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'trm.json'
+      - 'README.md'
+
+jobs:
+  update-trm:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Fetch TRM and update JSON
+        run: python3 main.py trm.json
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add trm.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update TRM data [skip ci]" && git push)
