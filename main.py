@@ -1,12 +1,8 @@
 import os
-import urllib3
 import json
 import sys
 from datetime import datetime
 from trm_service import TRMService
-
-# Suppress warnings from official source
-urllib3.disable_warnings()
 
 def main():
     service = TRMService()
