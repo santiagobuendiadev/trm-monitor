@@ -9,6 +9,7 @@ on:
       - main
     paths-ignore:
       - 'trm.json'
+      - 'rates.json'
       - 'README.md'
 
 jobs:
@@ -27,12 +28,15 @@ jobs:
       - name: Show Python version
         run: python3 --version
 
-      - name: Fetch TRM and update JSON
-        run: python3 main.py trm.json
+      - name: Run offline tests
+        run: python3 -m unittest test_rates
+
+      - name: Fetch TRM and other rates, update JSON
+        run: python3 main.py trm.json rates.json
 
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add trm.json
+          git add trm.json rates.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update TRM data [skip ci]" && git push)
