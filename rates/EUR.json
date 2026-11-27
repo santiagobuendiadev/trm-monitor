@@ -1,0 +1,14 @@
+{
+  "value": 3978.37,
+  "unit": "COP",
+  "currency": "EUR",
+  "valid_from": "2026-11-26T00:00:00-05:00",
+  "valid_until": "2026-11-27T00:00:00-05:00",
+  "success": true,
+  "id": null,
+  "per_usd": 0.912659,
+  "source": "BCE (Banco Central Europeo)",
+  "source_date": "2026-11-27",
+  "type": "referencia",
+  "updated_at": "2026-11-27T11:14:21-05:00"
+}

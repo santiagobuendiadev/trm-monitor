@@ -1,0 +1,14 @@
+{
+  "value": 1039.9,
+  "unit": "COP",
+  "currency": "PEN",
+  "valid_from": "2026-11-26T00:00:00-05:00",
+  "valid_until": "2026-11-27T00:00:00-05:00",
+  "success": true,
+  "id": null,
+  "per_usd": 3.491571,
+  "source": "BCRP (Banco Central de Reserva del Peru)",
+  "source_date": "2026-11-25",
+  "type": "referencia",
+  "updated_at": "2026-11-27T11:14:21-05:00"
+}
