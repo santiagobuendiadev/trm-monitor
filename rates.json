@@ -1,0 +1,54 @@
+{
+  "base": "COP",
+  "updated_at": "2026-11-27T11:03:30-05:00",
+  "trm": {
+    "value": 3630.89,
+    "valid_from": "2026-11-26T00:00:00-05:00",
+    "valid_until": "2026-11-27T00:00:00-05:00"
+  },
+  "rates": {
+    "USD": {
+      "value": 3630.89,
+      "per_usd": 1.0,
+      "source": "Superfinanciera (TRM oficial)",
+      "source_date": "2026-11-26",
+      "type": "oficial"
+    },
+    "EUR": {
+      "value": 3978.37,
+      "per_usd": 0.912659,
+      "source": "BCE (Banco Central Europeo)",
+      "source_date": "2026-11-27",
+      "type": "referencia"
+    },
+    "MXN": {
+      "value": 186.08,
+      "per_usd": 19.512093,
+      "source": "BCE (Banco Central Europeo)",
+      "source_date": "2026-11-27",
+      "type": "referencia"
+    },
+    "BRL": {
+      "value": 660.35,
+      "per_usd": 5.498403,
+      "source": "BCE (Banco Central Europeo)",
+      "source_date": "2026-11-27",
+      "type": "referencia"
+    },
+    "PEN": {
+      "value": 1039.9,
+      "per_usd": 3.491571,
+      "source": "BCRP (Banco Central de Reserva del Peru)",
+      "source_date": "2026-11-25",
+      "type": "referencia"
+    },
+    "ARS": {
+      "value": 2.27,
+      "per_usd": 1601.5,
+      "source": "BCRA (Banco Central de la Republica Argentina)",
+      "source_date": "2026-11-26",
+      "type": "referencia"
+    }
+  },
+  "errors": {}
+}
