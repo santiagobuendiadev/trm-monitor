@@ -192,3 +192,33 @@ def build_rates(trm, previous=None, sources=SOURCES, now=None):
         "rates": rates,
         "errors": errors,
     }
+
+
+def build_unit_files(rates_doc, trm):
+    """
+    One document per currency, for lookups by unit (rates/USD.json,
+    rates/EUR.json, ...). Each one keeps the keys of trm.json
+    (value, unit, valid_from, valid_until, success, id) so a consumer
+    can read any currency the same way it reads the TRM today.
+    """
+    files = {}
+    for code, rate in rates_doc["rates"].items():
+        doc = {
+            "value": rate["value"],
+            "unit": "COP",
+            "currency": code,
+            "valid_from": trm.get("valid_from"),
+            "valid_until": trm.get("valid_until"),
+            "success": not rate.get("stale", False),
+            "id": trm.get("id") if code == "USD" else None,
+            "per_usd": rate.get("per_usd"),
+            "source": rate.get("source"),
+            "source_date": rate.get("source_date"),
+            "type": rate.get("type"),
+            "updated_at": rates_doc["updated_at"],
+        }
+        if rate.get("stale"):
+            doc["stale"] = True
+            doc["error"] = rates_doc["errors"].get(code)
+        files[code] = doc
+    return files

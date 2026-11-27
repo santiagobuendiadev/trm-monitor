@@ -83,5 +83,27 @@ class BuildTests(unittest.TestCase):
         self.assertIn("ARS", out["errors"])
 
 
+class UnitFileTests(unittest.TestCase):
+    def test_one_file_per_currency_with_trm_keys(self):
+        trm = dict(TRM, id="1922301")
+        doc = rs.build_rates(trm, sources=BuildTests().sources())
+        files = rs.build_unit_files(doc, trm)
+        self.assertEqual(sorted(files), ["ARS", "BRL", "EUR", "MXN", "PEN", "USD"])
+        for key in ("value", "unit", "valid_from", "valid_until", "success", "id"):
+            self.assertIn(key, files["EUR"])
+        self.assertEqual(files["EUR"]["value"], 4320.0)
+        self.assertEqual(files["EUR"]["unit"], "COP")
+        self.assertEqual(files["USD"]["id"], "1922301")
+        self.assertTrue(files["EUR"]["success"])
+
+    def test_stale_currency_is_not_success(self):
+        previous = {"rates": {"ARS": {"value": 3.5, "source": "BCRA", "source_date": "2026-11-25"}}}
+        doc = rs.build_rates(TRM, previous, sources=BuildTests().sources(fail_bcra=True))
+        ars = rs.build_unit_files(doc, TRM)["ARS"]
+        self.assertFalse(ars["success"])
+        self.assertTrue(ars["stale"])
+        self.assertIn("timeout", ars["error"])
+
+
 if __name__ == "__main__":
     unittest.main()
