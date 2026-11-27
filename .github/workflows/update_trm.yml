@@ -19,12 +19,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'
+      # No setup-python step: the script uses only the standard library,
+      # so the runner's preinstalled python3 is enough. Pinning an old
+      # version (3.9) broke the job when ubuntu-latest moved to 26.04.
+      - name: Show Python version
+        run: python3 --version
 
       - name: Fetch TRM and update JSON
         run: python3 main.py trm.json
