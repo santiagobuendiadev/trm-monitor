@@ -1,14 +1,14 @@
 {
-  "value": 3630.89,
+  "value": 3498.46,
   "unit": "COP",
   "currency": "USD",
-  "valid_from": "2026-11-26T00:00:00-05:00",
-  "valid_until": "2026-11-27T00:00:00-05:00",
+  "valid_from": "2026-11-28T00:00:00-05:00",
+  "valid_until": "2026-11-30T00:00:00-05:00",
   "success": true,
-  "id": "2021801",
+  "id": "2022801",
   "per_usd": 1.0,
   "source": "Superfinanciera (TRM oficial)",
-  "source_date": "2026-11-26",
+  "source_date": "2026-11-28",
   "type": "oficial",
-  "updated_at": "2026-11-27T11:14:21-05:00"
+  "updated_at": "2026-11-28T03:35:39-05:00"
 }

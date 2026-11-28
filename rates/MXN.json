@@ -1,14 +1,14 @@
 {
-  "value": 186.08,
+  "value": 179.3,
   "unit": "COP",
   "currency": "MXN",
-  "valid_from": "2026-11-26T00:00:00-05:00",
-  "valid_until": "2026-11-27T00:00:00-05:00",
+  "valid_from": "2026-11-28T00:00:00-05:00",
+  "valid_until": "2026-11-30T00:00:00-05:00",
   "success": true,
   "id": null,
   "per_usd": 19.512093,
   "source": "BCE (Banco Central Europeo)",
   "source_date": "2026-11-27",
   "type": "referencia",
-  "updated_at": "2026-11-27T11:14:21-05:00"
+  "updated_at": "2026-11-28T03:35:39-05:00"
 }

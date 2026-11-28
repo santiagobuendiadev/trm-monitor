@@ -1,14 +1,14 @@
 {
-  "value": 2.27,
+  "value": 2.18,
   "unit": "COP",
   "currency": "ARS",
-  "valid_from": "2026-11-26T00:00:00-05:00",
-  "valid_until": "2026-11-27T00:00:00-05:00",
+  "valid_from": "2026-11-28T00:00:00-05:00",
+  "valid_until": "2026-11-30T00:00:00-05:00",
   "success": true,
   "id": null,
-  "per_usd": 1601.5,
+  "per_usd": 1605.0,
   "source": "BCRA (Banco Central de la Republica Argentina)",
-  "source_date": "2026-11-26",
+  "source_date": "2026-11-27",
   "type": "referencia",
-  "updated_at": "2026-11-27T11:14:21-05:00"
+  "updated_at": "2026-11-28T03:35:39-05:00"
 }
